@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Home">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Home"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="5dp"/>
+
+    <FrameLayout
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="50dp"
+        android:background="#72BFB9" />
+
+    <ProgressBar
+        android:id="@+id/progress_circular"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="60dp"
+        android:indeterminate="false"
+        android:max="10000"
+        android:progress="0" />
+
+    <TextView
+        android:id="@+id/tv_Steps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="105dp"
+        android:layout_marginTop="100dp"
+        android:text="0"
+        android:textColor="@android:color/black"
+        android:textSize="40dp" />
+
+    <TextView
+        android:id="@+id/tv_totalMax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="150dp"
+        android:text="/10000"
+        android:textColor="@android:color/black"
+        android:textSize="14dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="215dp"
+        android:text="steps"
+        android:textColor="@android:color/black"
+        android:textSize="14dp" />
+
+
+
+    <ProgressBar
+        android:id="@+id/progress_circular1"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="60dp"
+        android:indeterminate="false"
+        android:max="10000"
+        android:progress="0" />
+
+
+    <TextView
+        android:id="@+id/calories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="110dp"
+        android:layout_marginTop="110dp"
+        android:text="0"
+        android:textColor="@android:color/black"
+        android:textSize="40dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="75dp"
+        android:layout_marginTop="215dp"
+        android:text="calories burn"
+        android:textColor="@android:color/black"
+        android:textSize="14dp" />
+
+    <Button
+        android:id="@+id/exercise"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="270dp"
+        android:backgroundTint="#F5E1A4" />
+
+
+    <Button
+        android:id="@+id/diet"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="270dp"
+        android:backgroundTint="#F5E1A4"/>
+
+    <Button
+        android:id="@+id/meditation"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="440dp"
+        android:backgroundTint="#F5E1A4" />
+
+    <Button
+        android:id="@+id/trophy"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="440dp"
+        android:backgroundTint="#F5E1A4"/>
+
+
+</RelativeLayout>
