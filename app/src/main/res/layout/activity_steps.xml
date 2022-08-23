@@ -6,4 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".Steps">
 
+    <ProgressBar
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_centerInParent="true"
+        android:id="@+id/progress_circular1"
+        android:max="10000"
+        android:progress="0"
+        android:indeterminate="false"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_Steps1"
+        android:layout_centerInParent="true"
+        android:text="0"
+        android:textColor="@android:color/black"
+        android:textSize="40dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_totalMax1"
+        android:layout_below="@+id/tv_Steps1"
+        android:layout_centerInParent="true"
+        android:text="/10000"
+        android:textColor="@android:color/black"
+        android:textSize="14dp"/>
+
 </RelativeLayout>

@@ -4,18 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Exercise">
+    tools:context=".Exercise"
+    android:background="#D0EAE7">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Exersice Page"/>
+        android:text="Exercise Page"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="5dp"/>
 
     <Button
         android:id="@+id/testBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="60dp"
         android:text="back"/>
 
 </RelativeLayout>
