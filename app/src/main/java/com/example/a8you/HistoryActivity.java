@@ -11,20 +11,18 @@ import android.widget.Button;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class Exercise extends AppCompatActivity {
-
-
+public class HistoryActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_exercise);
+        setContentView(R.layout.activity_history);
 
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
 
         // Set Home selected
-        //bottomNavigationView.setSelectedItemId(R.id.dashboard);
+        bottomNavigationView.setSelectedItemId(R.id.dashboard);
 
         // Perform item selected listener
         bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener(){
@@ -39,8 +37,6 @@ public class Exercise extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.dashboard:
-                        startActivity(new Intent(getApplicationContext(),HistoryActivity.class));
-                        overridePendingTransition(0,0);
                         return true;
                     case R.id.about:
                         startActivity(new Intent(getApplicationContext(),Profile.class));
@@ -52,29 +48,12 @@ public class Exercise extends AppCompatActivity {
         });
 
         Button testBtn = (Button)findViewById(R.id.testBtn);
-        Button meditationBtn = (Button) findViewById(R.id.meditationBtn);
-        Button stepsBtn = (Button) findViewById(R.id.StepsPageBtn);
+
         testBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent a = new Intent(Exercise.this, Home.class);
+                Intent a = new Intent(HistoryActivity.this, Home.class);
                 startActivity(a);
-            }
-        });
-
-        meditationBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent mp = new Intent(Exercise.this,Meditation.class);
-                startActivity(mp);
-            }
-        });
-
-        stepsBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent sp = new Intent(Exercise.this, Steps.class);
-                startActivity(sp);
             }
         });
     }
