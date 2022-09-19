@@ -4,10 +4,9 @@ import java.util.ArrayList;
 
 public class User {
 
-    public String username, email, weight, height, age;
+    public String username, email, weight, height, age, bmi;
     public ArrayList<String> userDataArray;
     public User(){
-
     }
 
     public enum genderEnum {
@@ -27,8 +26,18 @@ public class User {
 //        userDataArray.add(height);
 //        userDataArray.add(weight);
 //        userDataArray.add(age);
-
     }
 
+    public double setBmi(){
+        double bmiD = Double.valueOf(weight) / Math.pow(Double.valueOf(height), 2);
+//        bmi = String.valueOf(bmiD);
+        return bmiD;
+    }
 
+//    public String gender(String gender) {
+//        if (gender.equalsIgnoreCase("male")){
+//            gender = "male";
+//        } else
+//        return gender
+//    }
 }

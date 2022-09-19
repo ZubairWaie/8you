@@ -3,9 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/My Computer/AndroidStudioProjects/Waie/8you2/8you/app/src/main/res/drawable-xxxhdpi/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Users/My Computer/AndroidStudioProjects/Waie/8you2/8you/app/src/main/res/layout/activity_create_account.xml" value="0.1308876811594203" />
+        <entry key="..\:/Users/My Computer/AndroidStudioProjects/Waie/8you2/8you/app/src/main/res/layout/activity_exercise.xml" value="0.1308876811594203" />
+        <entry key="..\:/Users/My Computer/AndroidStudioProjects/Waie/8you2/8you/app/src/main/res/layout/activity_history.xml" value="0.259375" />
+        <entry key="..\:/Users/My Computer/AndroidStudioProjects/Waie/8you2/8you/app/src/main/res/layout/activity_home.xml" value="0.17708333333333334" />
         <entry key="..\:/Users/My Computer/AndroidStudioProjects/Waie/8you2/8you/app/src/main/res/layout/activity_login.xml" value="0.259375" />
+        <entry key="..\:/Users/My Computer/AndroidStudioProjects/Waie/8you2/8you/app/src/main/res/layout/activity_main.xml" value="0.1308876811594203" />
+        <entry key="..\:/Users/My Computer/AndroidStudioProjects/Waie/8you2/8you/app/src/main/res/layout/activity_meditation.xml" value="0.1308876811594203" />
         <entry key="..\:/Users/My Computer/AndroidStudioProjects/Waie/8you2/8you/app/src/main/res/layout/activity_profile.xml" value="0.264" />
-        <entry key="..\:/Users/My Computer/AndroidStudioProjects/Waie/8you2/8you/app/src/main/res/layout/activity_profile_edit.xml" value="0.259375" />
+        <entry key="..\:/Users/My Computer/AndroidStudioProjects/Waie/8you2/8you/app/src/main/res/layout/activity_profile_edit.xml" value="0.2" />
+        <entry key="..\:/Users/My Computer/AndroidStudioProjects/Waie/8you2/8you/app/src/main/res/layout/activity_splash.xml" value="0.1308876811594203" />
+        <entry key="..\:/Users/My Computer/AndroidStudioProjects/Waie/8you2/8you/app/src/main/res/layout/activity_steps.xml" value="0.1308876811594203" />
+        <entry key="..\:/Users/My Computer/AndroidStudioProjects/Waie/8you2/8you/app/src/main/res/layout/activity_test.xml" value="0.1308876811594203" />
+        <entry key="..\:/Users/My Computer/AndroidStudioProjects/Waie/8you2/8you/app/src/main/res/layout/activity_trophy.xml" value="0.1308876811594203" />
+        <entry key="..\:/Users/My Computer/AndroidStudioProjects/Waie/8you2/8you/app/src/main/res/menu/menu_navigation.xml" value="0.2553846153846154" />
         <entry key="..\:/Users/Zubair/AndroidStudioProjects/8You2/app/src/main/res/drawable-v24/ic_baseline_person_24.xml" value="0.1955" />
         <entry key="..\:/Users/Zubair/AndroidStudioProjects/8You2/app/src/main/res/drawable-v24/ic_dashboard_black_24dp.xml" value="0.1955" />
         <entry key="..\:/Users/Zubair/AndroidStudioProjects/8You2/app/src/main/res/drawable-v24/ic_home_black_24dp.xml" value="0.1955" />

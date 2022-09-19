@@ -20,18 +20,24 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.*;
+import com.google.firebase.storage.FirebaseStorage;
 
 import java.io.IOException;
 import java.util.UUID;
 
-public class profileEdit extends AppCompatActivity implements View.OnClickListener {
+public class profileEdit extends AppCompatActivity  {
     // views for button
     private Button btnSelect, btnUpload;
 
@@ -44,7 +50,7 @@ public class profileEdit extends AppCompatActivity implements View.OnClickListen
     // request code
     private final int PICK_IMAGE_REQUEST = 22;
 
-    private TextView a;
+    private TextView test;
     private Button saveEdit;
     private EditText editName, editOldEmail, editNewEmail, editWeight, editHeight, editAge, editOldPassword, editNewPassword;
     private FirebaseAuth mAuth;
@@ -60,18 +66,14 @@ public class profileEdit extends AppCompatActivity implements View.OnClickListen
         setContentView(R.layout.activity_profile_edit);
 
         mAuth = FirebaseAuth.getInstance();
-        saveEdit = (Button) findViewById(R.id.save);
-        saveEdit.setOnClickListener(this);
 
-        mDatabase = FirebaseDatabase.getInstance().getReference();
+
+//        mDatabase = FirebaseDatabase.getInstance().getReference();
 
 //        editOldEmail = (EditText) findViewById(R.id.oldEmail);
 //        editNewEmail = (EditText) findViewById(R.id.newEmail);
 
-        editName = (EditText) findViewById(R.id.name);
-        editWeight = (EditText) findViewById(R.id.weight);
-        editHeight = (EditText) findViewById(R.id.height);
-        editAge = (EditText) findViewById(R.id.age);
+
 //        editOldPassword = (EditText) findViewById(R.id.oldPassword);
 //        editNewPassword = (EditText) findViewById(R.id.newPassword);
 //
@@ -87,9 +89,20 @@ public class profileEdit extends AppCompatActivity implements View.OnClickListen
         btnUpload = findViewById(R.id.btnUpload);
         imageView = findViewById(R.id.imgView);
 
+        editName = (EditText) findViewById(R.id.name);
+
         // get the Firebase  storage reference
         storage = FirebaseStorage.getInstance();
         storageReference = storage.getReference();
+
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        Button saveEdit = (Button) findViewById(R.id.save);
+        saveEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                save();
+            }
+        });
 
         // on pressing btnSelect SelectImage() is called
         btnSelect.setOnClickListener(new View.OnClickListener() {
@@ -171,6 +184,8 @@ public class profileEdit extends AppCompatActivity implements View.OnClickListen
     {
         if (filePath != null) {
 
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
             // Code for showing progressDialog while uploading
             ProgressDialog progressDialog
                     = new ProgressDialog(this);
@@ -180,6 +195,7 @@ public class profileEdit extends AppCompatActivity implements View.OnClickListen
             // Defining the child of storageReference
             StorageReference ref
                     = storageReference
+                    .child(user.getUid())
                     .child(
                             "images/"
                                     + UUID.randomUUID().toString());
@@ -241,43 +257,81 @@ public class profileEdit extends AppCompatActivity implements View.OnClickListen
         }
     }
 
-    @Override
-    public void onClick(View v) {
-        save(v);
-    }
+//    @Override
+//    public void onClick(View v) {
+//        save(v);
+//    }
 
     public void onRadioButtonClicked(View view) {
 
     }
-    private void save(View view){
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+    public void save(){
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+//        mAuth = FirebaseAuth.getInstance();
+        test = (TextView) findViewById(R.id.test);
+        editName = (EditText) findViewById(R.id.name);
+        String username = editName.getText().toString();
+        test.setText(username);
+//        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        mDatabase.push().setValue("username");
+//        myRef.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                mDatabase.setValue(username);
+//                // after adding this data we are showing toast message.
+//                Toast.makeText(profileEdit.this, "data added", Toast.LENGTH_SHORT).show();
+//
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//                Toast.makeText(profileEdit.this, "Fail to add data " + error, Toast.LENGTH_SHORT).show();
+//
+//            }
+//        });
 
+//        editWeight = (EditText) findViewById(R.id.weight);
+//        editHeight = (EditText) findViewById(R.id.height);
+//        editAge = (EditText) findViewById(R.id.age);
 
-        String username = editName.getText().toString().trim();
-        String height = editHeight.getText().toString().trim();
-        String weight = editWeight.getText().toString().trim();
-        String age = editAge.getText().toString().trim();
+//        String height = editHeight.getText().toString().trim();
+//        String weight = editWeight.getText().toString().trim();
+//        String age = editAge.getText().toString().trim();
 
         // Is the button now checked?
-        boolean checked = ((RadioButton) view).isChecked();
+//        boolean checked = ((RadioButton) view).isChecked();
 
         // Check which radio button was clicked
-        switch(view.getId()) {
-            case R.id.maleBtn:
-                if (checked)
-                    gender = User.genderEnum.MALE;
-                    break;
-            case R.id.femaleBtn:
-                if (checked)
-                    gender = User.genderEnum.FEMALE;
-                    break;
-        }
+//        switch(view.getId()) {
+//            case R.id.maleBtn:
+//                if (checked)
+//                    gender = User.genderEnum.MALE;
+//                    break;
+//            case R.id.femaleBtn:
+//                if (checked)
+//                    gender = User.genderEnum.FEMALE;
+//                    break;
+//        }
 //        User user1 = new User(username, height, weight,age);
-        mDatabase.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(username);
-        mDatabase.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(height);
-        mDatabase.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(weight);
-        mDatabase.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(age);
-        mDatabase.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(gender);
+////        mDatabase.child( FirebaseAuth.getInstance().getCurrentUser().getUid() ).setValue(username);
+//        mDatabase.push().setValue(username).addOnCompleteListener(new OnCompleteListener<Void>() {
+//            @Override
+//            public void onComplete(@NonNull Task<Void> task) {
+//                if(task.isSuccessful()){
+//                    Toast.makeText(profileEdit.this, "Data has been Stored",
+//                            Toast.LENGTH_LONG).show();
+//                } else {
+//                    Toast.makeText(profileEdit  .this, "An Error Has Been Occured",
+//                            Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//        });
+//        mDatabase.child("username").setValue(username);
+//        mDatabase.child("height").setValue(height);
+//        mDatabase.child("weight").setValue(weight);
+//        mDatabase.child("age").setValue(age);
+//        mDatabase.child("gender").setValue(gender);
 
     }
+
 }

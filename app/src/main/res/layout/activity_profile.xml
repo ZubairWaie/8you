@@ -83,9 +83,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Username \n"
+                    android:text="Username:"
                     android:textColor="@color/black"
-                    android:textSize="20dp" />
+                    android:textSize="20dp"
+                    android:id="@+id/username"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -93,7 +94,8 @@
                     android:layout_weight="1"
                     android:text="Weight:"
                     android:textColor="@color/black"
-                    android:textSize="20dp" />
+                    android:textSize="20dp"
+                    android:id="@+id/weight"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -101,7 +103,8 @@
                     android:layout_weight="1"
                     android:text="Height:"
                     android:textColor="@color/black"
-                    android:textSize="20dp" />
+                    android:textSize="20dp"
+                    android:id="@+id/height"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -109,7 +112,8 @@
                     android:layout_weight="1"
                     android:text="Age: "
                     android:textColor="@color/black"
-                    android:textSize="20dp" />
+                    android:textSize="20dp"
+                    android:id="@+id/age"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -117,25 +121,60 @@
                     android:layout_weight="1"
                     android:text="Gender: "
                     android:textColor="@color/black"
-                    android:textSize="20dp" />
-
+                    android:textSize="20dp"
+                    android:id="@+id/gender"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BMI: "
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:layout_weight="1"
+                    android:id="@+id/bmi"/>
             </LinearLayout>
         </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="BMI: "
-            android:textColor="@color/black"
-            android:textSize="20dp" />
+
+
+
 
         <Button
-            android:id="@+id/gotoedit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Edit Profile" />
+            android:id="@+id/goToEdit"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:text="edit profile"
+            android:textColor="#FFFFFF"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold" />
 
+        <Button
+            android:id="@+id/subs"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:text="subscription"
+            android:textColor="#FFFFFF"
+            android:layout_marginLeft="50dp"
+            android:textStyle="bold" />
 
+        <Button
+            android:id="@+id/game"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:text="Games"
+            android:textColor="#FFFFFF"
+            android:layout_marginLeft="50dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/log"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:text="logout"
+            android:textColor="#FFFFFF"
+            android:layout_marginLeft="50dp"
+            android:textStyle="bold" />
     </LinearLayout>
+
 
 </RelativeLayout>
